@@ -16,17 +16,27 @@
 <body>
     <header>
         <div class="gutter-right logo">
-            <img src="../assets/big-logo.png" />
+            <a href="../workshops">See all workshops</a>
+            <a href="../create">Add participant</a>
         </div>
     </header>    
     <button id="logout">Logout</button>
-    <main>
-        <h1>You are logged in!</h1>
+    <main class='create-main'>
+        <h2>Add a new participant</h2>
+        <form class="partaker-form">
+            <label>Participants name
+                <input name="partaker-name"/>
+            </label>
+            <label>Goes to
+                <select name="workshop-id"></select>
+            </label>
+            <button>Submit</button>
+        </form>
     </main>
     <footer>
         <div class="copy gutter-right">&copy; 2021 Alchemy Code Lab</div>
     </footer>
-    <script type="module" src="./other-page.js"></script>
+    <script type="module" src="./create.js"></script>
 </body>
 
 </html>

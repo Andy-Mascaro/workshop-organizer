@@ -42,13 +42,13 @@ export async function getWorkshops(){
     return checkError(resp);
 }
 
-export async function deletePeople(id) {
+export async function deletePartaker(id) {
     const resp = await client.from('people').delete().match({ id: id }).single();
 
     return checkError(resp);
 }
 
-export async function createPeople(people) {
+export async function createPartaker(people) {
     const resp = await client.from('people').insert(people);
 
     return checkError(resp);
