@@ -38,18 +38,18 @@ export async function logout() {
 }
 
 export async function getWorkshops(){
-    const resp = await client.from('workshops').select('*,people (*)').match({ 'people.user_id' : client.auth.session().user.id });
+    const resp = await client.from('workshops').select('*,partakers (*)').match({ 'partakers.user_id' : client.auth.session().user.id });
     return checkError(resp);
 }
 
 export async function deletePartaker(id) {
-    const resp = await client.from('people').delete().match({ id: id }).single();
+    const resp = await client.from('partakers').delete().match({ id: id }).single();
 
     return checkError(resp);
 }
 
 export async function createPartaker(people) {
-    const resp = await client.from('people').insert(people);
+    const resp = await client.from('partakers').insert(people);
 
     return checkError(resp);
 }

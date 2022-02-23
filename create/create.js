@@ -3,7 +3,7 @@ import { checkAuth, logout, getWorkshops, createPartaker } from '../fetch-utils.
 
 
 const logoutButton = document.getElementById('logout');
-const form = document.querySelector('partaker-form');
+const form = document.querySelector('.partaker-form');
 
 form.addEventListener('submit', async e => {
     e.preventDefault();
@@ -18,7 +18,7 @@ form.addEventListener('submit', async e => {
 window.addEventListener('load', async () => {
     const select = document.querySelector('select');
     const workshops = await getWorkshops();
-
+console.log(workshops);
     for (let workshop of workshops) {
         const option = document.createElement('option');
 
