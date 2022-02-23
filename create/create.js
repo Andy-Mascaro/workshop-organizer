@@ -18,7 +18,7 @@ form.addEventListener('submit', async e => {
 window.addEventListener('load', async () => {
     const select = document.querySelector('select');
     const workshops = await getWorkshops();
-console.log(workshops);
+
     for (let workshop of workshops) {
         const option = document.createElement('option');
 
